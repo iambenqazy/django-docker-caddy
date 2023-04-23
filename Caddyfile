@@ -1,0 +1,13 @@
+localhost {
+        handle /static/* {
+                root * /srv
+                file_server
+        }
+        handle /media/* {
+                root * /srv
+                file_server
+        }
+        handle {
+                reverse_proxy app:8000
+        }
+}
